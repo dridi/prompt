@@ -29,7 +29,7 @@
 #include <unistd.h>
 
 #include <readline/readline.h>
-#ifdef HAVE_READLINE_HISTORY
+#ifdef HAVE_READLINE_HISTORY_H
 #  include <readline/history.h>
 #endif
 
@@ -75,7 +75,7 @@ line_cb(char *line)
 	if (*line == '\0')
 		return;
 
-#ifdef HAVE_READLINE_HISTORY
+#ifdef HAVE_READLINE_HISTORY_H
 	add_history(line);
 #endif
 
@@ -151,7 +151,7 @@ start(char * const *argv)
 static void
 forward_output(FILE *file, int fd)
 {
-	char buf[1024], save;
+	char buf[1024];
 	ssize_t len;
 
 	erase_line();
@@ -166,7 +166,7 @@ forward_output(FILE *file, int fd)
 	restore_line();
 }
 
-void
+int
 main(int argc, char * const *argv)
 {
 	struct pollfd pfd[3];
@@ -212,4 +212,6 @@ main(int argc, char * const *argv)
 		if (pfd[0].revents & POLLIN)
 			rl_callback_read_char();
 	}
+
+	return (EXIT_SUCCESS);
 }
