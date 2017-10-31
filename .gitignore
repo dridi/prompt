@@ -1,0 +1,33 @@
+# build system
+
+.deps/
+.libs/
+autom4te.cache/
+build/
+build-aux/
+m4/
+prompt-*/
+
+*.o
+*.tar.gz
+
+Makefile
+Makefile.in
+aclocal.m4
+config.h
+config.h.in
+config.log
+config.status
+configure
+libtool
+stamp-h1
+prompt-*.tar.gz
+
+# packaging
+
+*.rpm
+prompt.spec
+
+# programs
+
+prompt

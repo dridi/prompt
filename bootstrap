@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+set -u
+
+WORK_DIR="$PWD"
+ROOT_DIR="$(dirname "$0")"
+
+test -n "$ROOT_DIR"
+cd "$ROOT_DIR"
+
+mkdir -p m4 build-aux
+aclocal -I m4 -I .
+autoheader
+automake --add-missing --copy --foreign
+autoconf
+
+cd "$WORK_DIR"
+"$ROOT_DIR"/configure --enable-silent-rules "$@"

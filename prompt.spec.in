@@ -1,0 +1,35 @@
+Name:		prompt
+Version:	@VERSION@
+Release:	1%{?dist}
+Summary:	Turn programs interactive
+
+Group:		System Environment/Daemons
+License:	GPLv3+
+URL:		https://github.com/dridi/%{name}
+Source:		%{name}-%{version}.tar.gz
+
+
+%description
+A simple TTY wrapper for programs using standard input and output.
+
+
+%prep
+%setup -q
+
+
+%build
+%configure
+%make_build
+
+
+%install
+%make_install
+
+
+%files
+%{_bindir}/%{name}
+
+
+%changelog
+* Tue Oct 31 2017 - Dridi Boukelmoune <dridi[dot]boukelmoune[at]gmail[dot]com> - 0.1-1
+- Initial spec
