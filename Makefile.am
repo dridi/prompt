@@ -18,6 +18,8 @@ ACLOCAL_AMFLAGS = -I m4
 
 bin_PROGRAMS = prompt
 
+dist_doc_DATA = README.rst
+
 EXTRA_DIST = \
 	gpl-3.0.txt \
 	prompt.spec \

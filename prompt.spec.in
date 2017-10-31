@@ -28,6 +28,7 @@ A simple TTY wrapper for programs using standard input and output.
 
 %files
 %{_bindir}/%{name}
+%{_pkgdocdir}
 
 
 %changelog
