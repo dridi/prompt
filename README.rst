@@ -1,6 +1,11 @@
 prompt
 ======
 
+ARCHIVED!
+  This repository is archived and development is permanently halted: have a
+  look at rlwrap instead, it's a much more advanced and mature alternative to
+  prompt.
+
 Isn't it frustrating to forget that you are not in an interactive prompt the
 moment you press a key like up? This is a classic problem with programs like
 ``telnet``, even when you use the escape character and get a prompt.
